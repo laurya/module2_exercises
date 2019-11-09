@@ -5,13 +5,13 @@ const sportsType = ["Football","Basketball","Tennis","Hockey","Voley","Running",
 
 const athletes = ["Leo Messi","Gasol","Fedrer","Gustafsson","Zaytsev","Van der Sar","Rossi"];
 
-const concat = (sports, athletes) => {
-    const playerSports = [...sports,...athletes];
+const concat = (param1, param2) => {
+    const playerSports = [...param1,...param2];
     return playerSports;
 }; 
 
-const concat2 = (sports, athletes) => {
-    const playerSports2 = [sports.concat(athletes)];
+const concat2 = (param1, param2) => {
+    const playerSports2 = [param1.concat(param2)];
     return playerSports2;
 }; 
 

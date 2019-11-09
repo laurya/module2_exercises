@@ -2,28 +2,28 @@
 const sports = ["Football","Basketball","Tennis","Hockey","Voley","Running","Motorbike"];
 
 /*Head*/
-const head = (sports) => {
-    const [firstSport] = sports;
+const head = (param1) => {
+    const [firstSport] = param1;
     return firstSport;
 };
 
 
 /*Tail*/
-const tail = (sports) => {
-    const [, ...newSports] = sports;
+const tail = (param1) => {
+    const [, ...newSports] = param1;
     return newSports;
 }; 
 
 
 /*Init*/
-const init = (sports) => {
-    const duplicateSports = sports.slice(1, sports.length -1);
+const init = (param1) => {
+    const duplicateSports = param1.slice(1, param1.length -1);
     return duplicateSports;
 };
 
 
 /*Last */
-const last = (sports) => {
-    const lessLastSport = sports.pop();
+const last = (param1) => {
+    const lessLastSport = param1.pop();
     return lessLastSport;
 }; 
