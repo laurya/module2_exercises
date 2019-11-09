@@ -1,4 +1,3 @@
-
 /*4. Read Books
 Crea una función isBookRead que reciba una lista de libros y un titulo y devuelva si se
 ha leído o no dicho libro.
@@ -42,3 +41,6 @@ function isBookRead(books, titleToSearch) {
     }
    return resultado;
 }
+
+// TypeScript
+

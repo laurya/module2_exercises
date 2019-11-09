@@ -17,3 +17,16 @@ function isBookRead(books, titleToSearch) {
     }
    return resultado;
 }
+
+//TypeScript
+
+interface booksToRead {
+    title: string,
+    isRead: boolean
+};
+
+const booksToReading: booksToRead = [
+    {title: "Harry Potter y la piedra filosofal", isRead: true},
+    {title: "Canción de hielo y fuego", isRead: false},
+    {title: "Devastación", isRead: true}
+];
