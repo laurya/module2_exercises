@@ -1,24 +1,19 @@
 console.log("playgroundTS");
 
-const lauryExercise3 = {
-    name: "Pepe", 
-    surname: "Garcia", 
-    car: "Mercedes", 
-    phone: "iPhone", 
-    age: 43
-};
+const books = [
+    {title: "Harry Potter y la piedra filosofal", isRead: true},
+    {title: "Canción de hielo y fuego", isRead: false},
+    {title: "Devastación", isRead: true},
+];
 
 
-function clone(source) {
-    let objectClonedNew = source;
-    return objectClonedNew;
-} 
-
-const a = {name: "Maria", surname: "Ibañez", country: "SPA"};
-const b = {name: "Luisa", age: 31, married: true};
-
-
-function merge(source, target) {
-    const newobject = {...target, ...source};
-    return newobject;
+function isBookRead(books, titleToSearch) {
+    let resultado = books.find( books => books.title === titleToSearch);
+    if(resultado === undefined){
+        resultado = false;
+    }
+    else{ 
+        resultado = resultado.isRead;
+    }
+   return resultado;
 }
