@@ -1,24 +1,19 @@
-console.log("playgroundTS");
-
 /*Implementa una función concat (inmutable) tal que, dados 2 arrays como entrada,
 devuelva la concatenación de ambos. Uঞliza rest / spread operators.
-const concat = (a, b) => {}; // Implementation here.*/
-
+*/
 const sportsType = ["Football","Basketball","Tennis","Hockey","Voley","Running","Motorbike"];
 
 const athletes = ["Leo Messi","Gasol","Fedrer","Gustafsson","Zaytsev","Van der Sar","Rossi"];
 
-const concat = (sportsType, athletes) => {
-    const playerSports = [...sportsType,...athletes];
+const concat = (sports, athletes) => {
+    const playerSports = [...sports,...athletes];
     return playerSports;
 }; 
 
-const concat2 = (sportsType, athletes) => {
-    const playerSports2 = [sportsType.concat(athletes)];
+const concat2 = (sports, athletes) => {
+    const playerSports2 = [sports.concat(athletes)];
     return playerSports2;
 }; 
-
-
 
 /*
 Opcional

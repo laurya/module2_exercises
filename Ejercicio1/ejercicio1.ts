@@ -1,5 +1,5 @@
 
-const sports = ["Football","Basketball","Tennis","Hockey","Voleyball","Running","Motorbike"];
+const sports = ["Football","Basketball","Tennis","Hockey","Voley","Running","Motorbike"];
 
 /*Head*/
 const head = (sports) => {
