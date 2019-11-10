@@ -1,45 +1,62 @@
 console.log("playgroundTS");
 
-const books = [
-    {title: "Harry Potter y la piedra filosofal", isRead: true},
-    {title: "Canción de hielo y fuego", isRead: false},
-    {title: "Devastación", isRead: true},
-];
+class SlothMachine {
 
+    //fields
+    private coins: number = 1;
+    private prize: boolean;
+    private roll: number;
+    private winPrize: boolean[];
 
-function isBookRead(books, titleToSearch) {
-    let resultado = books.find( books => books.title === titleToSearch);
-    if(resultado === undefined){
-        resultado = false;
+    private generar() : boolean {
+        let turnRoll: boolean;
+        this.roll = Math.floor(Math.random() * 2);
+        
+        console.log(this.roll);
+        if(this.roll == 0){
+            turnRoll = false;
+        }
+        else{turnRoll = true;}
+        return turnRoll;
+      }
+
+    public play (){
+        this.winPrize = [];
+        let contPrize: number = 0;
+        console.log(`Numero de monedas al entrar a play ${this.coins}`);
+
+        for(let i:number = 0; i<3; i++){
+            this.winPrize[i]=this.generar();
+            console.log(this.winPrize[i]);
+            if(this.winPrize[i] == true){
+                contPrize++;
+            }
+        }
+        this.coins++;
+        
+
+        console.log(`Numero de trues ${contPrize}`);
+        if(contPrize == 3){
+            console.log(`Numero de monedas ${this.coins}`);
+            this.winner(this.coins);
+            console.log("Vamos a ganado y reinicamos");
+        }
+        else{
+            this.nextTime();
+        }
     }
-    else{ 
-        resultado = resultado.isRead;
+
+    private winner(num_coins: number){
+        //cuando ganas reinicia moneda y sale mensaje
+        console.log(`Congratulations!!!. You won ${num_coins} coins!!`);
+        this.coins = 1;
     }
-   return resultado;
-}
 
-//TypeScript
-
-interface booksToRead {
-    title: string,
-    isRead: boolean
-};
-
-const booksToReading: booksToRead []= [
-    {title: "Harry Potter y la piedra filosofal", isRead: true},
-    {title: "Canción de hielo y fuego", isRead: false},
-    {title: "Devastación", isRead: true}
-];
-
-function bookIsRead(booksToRead, title){
-    let result: boolean = false;
-    const readed: booksToRead = booksToRead.find(booksToRead => booksToRead.title === title);
-
-    if(readed === undefined){
-        result = false;
+    private nextTime(){
+        //cuando no ganas e incrementas moneda y sale mensaje
+        console.log("Good luck next time!!");
     }
-    else{result = readed.isRead;}
+    
+} 
 
-    return result;
-}
-
+const machine1 = new SlothMachine();
