@@ -28,3 +28,21 @@ machine1.play(); // "Good luck next time!!"
 machine1.play(); // "Congratulations!!!. You won 2 coins!!"
 
 */
+
+class SlothMachine {
+
+    //fields
+     campo_de_clase: string;
+
+    // constructor (campo_constr: string){
+        //Codigo que se ejecuta cuando se crea el objeto
+    //     this.campo_de_clase = campo_constr;
+    // }
+
+    public play (){
+        //metodo para jugar partida
+    }
+    
+} 
+
+const machine1 = new SlothMachine();

@@ -25,8 +25,21 @@ interface booksToRead {
     isRead: boolean
 };
 
-const booksToReading: booksToRead = [
+const booksToReading: booksToRead []= [
     {title: "Harry Potter y la piedra filosofal", isRead: true},
     {title: "Canción de hielo y fuego", isRead: false},
     {title: "Devastación", isRead: true}
 ];
+
+function bookIsRead(booksToRead, title){
+    let result: boolean = false;
+    const readed: booksToRead = booksToRead.find(booksToRead => booksToRead.title === title);
+
+    if(readed === undefined){
+        result = false;
+    }
+    else{result = readed.isRead;}
+
+    return result;
+}
+
